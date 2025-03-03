@@ -7,6 +7,7 @@ import org.example.calculator;
 import org.example.Clases_Obj;
 import org.example.Poliformismo;
 import org.example.ContructoresEncapsulamiento;
+import org.example.ClaseAbstracta;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -77,7 +78,7 @@ public class Main {
         Poliformismo.usePolymorphism();*/
 
 
-        // importando la clase ContructoresEncapsulamiento
+        /*// importando la clase ContructoresEncapsulamiento
         // Crear una instancia de la clase Person utilizando el constructor sin argumentos
         ContructoresEncapsulamiento example = new ContructoresEncapsulamiento();
 
@@ -92,7 +93,15 @@ public class Main {
         // Modificar los valores utilizando los métodos públicos (encapsulamiento)
         person2.setName("Eve");
         person2.setAge(30);
-        person2.printValues(); // Imprime los valores modificados
+        person2.printValues(); // Imprime los valores modificados*/
 
+        // importando la clase ClaseAbstracta
+        ClaseAbstracta ClaseAbstracta = new ClaseAbstracta();
+        ClaseAbstracta.Dog dog = ClaseAbstracta.new Dog();
+        dog.makeSound();
+        dog.sleep();
+        ClaseAbstracta.Cat cat = ClaseAbstracta.new Cat();
+        cat.makeSound();
+        cat.sleep();
     }
 }
