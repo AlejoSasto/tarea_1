@@ -1,10 +1,10 @@
-package org.example;
+package org.example; // Define el paquete al que pertenece esta clase.
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList; // Importa la clase ArrayList de la biblioteca estándar de Java.
+import java.util.List; // Importa la interfaz List de la biblioteca estándar de Java.
+import java.util.Scanner; // Importa la clase Scanner de la biblioteca estándar de Java.
 
-public class TiposDatosAbstractos {
+public class TiposDatosAbstractos { // Define la clase principal TiposDatosAbstractos.
 
     // Definición de un Tipo de Dato Abstracto (TDA):
     // Un TDA es un modelo matemático que define un conjunto de objetos y un conjunto de operaciones
@@ -30,226 +30,163 @@ public class TiposDatosAbstractos {
     // favoreciendo la colaboración, la optimización y el desarrollo de sistemas más robustos y sostenibles.
 
     // Ejemplo de TDA List (Lista):
-    public static class Lista {
-        private List<Integer> elementos;
+    // Un TDA List es una colección de elementos ordenados que permite almacenar y manipular datos de forma dinámica.
+    // En Java, la interfaz List define un conjunto de operaciones comunes para trabajar con listas de elementos.
+    public static class Lista { // Define la clase interna Lista.
+        private List<Integer> elementos; // Declara una lista de enteros llamada elementos.
 
-        public Lista() {
-            elementos = new ArrayList<>();
+        public Lista() { // Constructor de la clase Lista.
+            elementos = new ArrayList<>(); // Inicializa la lista de elementos como un ArrayList.
         }
 
-        public void agregarElemento(int elemento) {
-            elementos.add(elemento);
+        public void agregarElemento(int elemento) { // Método para agregar un elemento a la lista.
+            elementos.add(elemento); // Agrega el elemento a la lista.
         }
 
-        public void eliminarElemento(int elemento) {
-            elementos.remove(Integer.valueOf(elemento));
+        public void eliminarElemento(int elemento) { // Método para eliminar un elemento de la lista.
+            elementos.remove(Integer.valueOf(elemento)); // Elimina el elemento de la lista.
         }
 
-        public void mostrarElementos() {
-            System.out.println("Elementos en la lista: " + elementos);
+        public void mostrarElementos() { // Método para mostrar los elementos de la lista.
+            System.out.println("Elementos en la lista: " + elementos); // Imprime los elementos de la lista.
         }
     }
 
     // Ejemplo de TDA Pila (Stack):
-    public static class Pila {
-        private List<Integer> pila;
+    // Una pila es una estructura de datos que sigue el principio LIFO (Last In, First Out),
+    // lo que significa que el último elemento en entrar es el primero en salir.
+    // En Java, la interfaz Stack define un conjunto de operaciones para trabajar con pilas de elementos.
+    public static class Pila { // Define la clase interna Pila.
+        private List<Integer> pila; // Declara una lista de enteros llamada pila.
 
-        public Pila() {
-            pila = new ArrayList<>();
+        public Pila() { // Constructor de la clase Pila.
+            pila = new ArrayList<>(); // Inicializa la lista de pila como un ArrayList.
         }
 
-        public void apilar(int elemento) {
-            pila.add(elemento);
+        public void apilar(int elemento) { // Método para agregar un elemento a la pila.
+            pila.add(elemento); // Agrega el elemento a la pila.
         }
 
-        public Integer desapilar() {
-            if (!pila.isEmpty()) {
-                return pila.remove(pila.size() - 1);
+        public Integer desapilar() { // Método para eliminar el último elemento de la pila.
+            if (!pila.isEmpty()) { // Verifica si la pila no está vacía.
+                return pila.remove(pila.size() - 1); // Elimina y retorna el último elemento de la pila.
             } else {
-                return null; // La pila está vacía
+                return null; // La pila está vacía.
             }
         }
 
-        public void mostrarPila() {
-            System.out.println("Pila: " + pila);
+        public void mostrarPila() { // Método para mostrar los elementos de la pila.
+            System.out.println("Pila: " + pila); // Imprime los elementos de la pila.
         }
     }
 
     // Ejemplo de TDA Cola (Queue):
-    public static class Cola {
-        private List<Integer> cola;
+    // Una cola es una estructura de datos que sigue el principio FIFO (First In, First Out),
+    // lo que significa que el primer elemento en entrar es el primero en salir.
+    // En Java, la interfaz Queue define un conjunto de operaciones para trabajar con colas de elementos.
+    public static class Cola { // Define la clase interna Cola.
+        private List<Integer> cola; // Declara una lista de enteros llamada cola.
 
-        public Cola() {
-            cola = new ArrayList<>();
+        public Cola() { // Constructor de la clase Cola.
+            cola = new ArrayList<>(); // Inicializa la lista de cola como un ArrayList.
         }
 
-        public void encolar(int elemento) {
-            cola.add(elemento);
+        public void encolar(int elemento) { // Método para agregar un elemento a la cola.
+            cola.add(elemento); // Agrega el elemento a la cola.
         }
 
-        public Integer desencolar() {
-            if (!cola.isEmpty()) {
-                return cola.remove(0);
+        public Integer desencolar() { // Método para eliminar el primer elemento de la cola.
+            if (!cola.isEmpty()) { // Verifica si la cola no está vacía.
+                return cola.remove(0); // Elimina y retorna el primer elemento de la cola.
             } else {
-                return null; // La cola está vacía
+                return null; // La cola está vacía.
             }
         }
 
-        public void mostrarCola() {
-            System.out.println("Cola: " + cola);
+        public void mostrarCola() { // Método para mostrar los elementos de la cola.
+            System.out.println("Cola: " + cola); // Imprime los elementos de la cola.
         }
     }
 
     // Definimos el TDA para cuentas bancarias
-    public static class Cuenta {
+    public static class Cuenta { // Define la clase interna Cuenta.
         // Atributos
-        private String numero;
-        private double saldo;
+        private String numero; // Declara un atributo de tipo String llamado numero.
+        private double saldo; // Declara un atributo de tipo double llamado saldo.
 
         // Constructor
-        public Cuenta(String numero, double saldo) {
-            this.numero = numero;
-            this.saldo = saldo;
+        public Cuenta(String numero, double saldo) { // Constructor de la clase Cuenta.
+            this.numero = numero; // Inicializa el atributo numero.
+            this.saldo = saldo; // Inicializa el atributo saldo.
         }
 
         // Métodos
-        public String getNumero() {
-            return numero;
+        public String getNumero() { // Método para obtener el número de cuenta.
+            return numero; // Retorna el número de cuenta.
         }
 
-        public double getSaldo() {
-            return saldo;
+        public double getSaldo() { // Método para obtener el saldo de la cuenta.
+            return saldo; // Retorna el saldo de la cuenta.
         }
 
         // Operación de depósito
-        public void depositar(double monto) {
-            saldo += monto;
+        public void depositar(double monto) { // Método para depositar un monto en la cuenta.
+            saldo += monto; // Incrementa el saldo de la cuenta.
         }
 
         // Operación de retiro con verificación de saldo
-        public boolean retirar(double monto) {
-            if (monto <= saldo) {
-                saldo -= monto;
-                return true;
+        public boolean retirar(double monto) { // Método para retirar un monto de la cuenta.
+            if (monto <= saldo) { // Verifica si el monto a retirar es menor o igual al saldo.
+                saldo -= monto; // Decrementa el saldo de la cuenta.
+                return true; // Retorna true si la operación fue exitosa.
             } else {
-                return false;
+                return false; // Retorna false si no hay suficiente saldo.
             }
         }
     }
 
     // Definimos el TDA para el Banco, que gestiona múltiples cuentas bancarias.
-    public static class Banco {
+    public static class Banco { // Define la clase interna Banco.
         // Atributos
-        private String nombre;
-        private List<Cuenta> cuentas;
+        private String nombre; // Declara un atributo de tipo String llamado nombre.
+        private List<Cuenta> cuentas; // Declara una lista de objetos Cuenta llamada cuentas.
 
         // Constructor
-        public Banco(String nombre) {
-            this.nombre = nombre;
-            this.cuentas = new ArrayList<>();
+        public Banco(String nombre) { // Constructor de la clase Banco.
+            this.nombre = nombre; // Inicializa el atributo nombre.
+            this.cuentas = new ArrayList<>(); // Inicializa la lista de cuentas como un ArrayList.
         }
 
         // Método para agregar una cuenta al banco
-        public void agregarCuenta(Cuenta cuenta) {
-            cuentas.add(cuenta);
+        public void agregarCuenta(Cuenta cuenta) { // Método para agregar una cuenta a la lista de cuentas.
+            cuentas.add(cuenta); // Agrega la cuenta a la lista de cuentas.
         }
 
         // Método para buscar una cuenta por número
-        public Cuenta buscarCuenta(String numero) {
-            for (Cuenta cuenta : cuentas) {
-                if (cuenta.getNumero().equals(numero)) {
-                    return cuenta;
+        public Cuenta buscarCuenta(String numero) { // Método para buscar una cuenta por su número.
+            for (Cuenta cuenta : cuentas) { // Itera sobre la lista de cuentas.
+                if (cuenta.getNumero().equals(numero)) { // Verifica si el número de cuenta coincide.
+                    return cuenta; // Retorna la cuenta encontrada.
                 }
             }
-            return null;
+            return null; // Retorna null si no se encuentra la cuenta.
         }
 
         // Método para realizar una transferencia entre dos cuentas
-        public void transferir(String origen, String destino, double monto) {
-            Cuenta cuentaOrigen = buscarCuenta(origen);
-            Cuenta cuentaDestino = buscarCuenta(destino);
+        public void transferir(String origen, String destino, double monto) { // Método para transferir dinero entre dos cuentas.
+            Cuenta cuentaOrigen = buscarCuenta(origen); // Busca la cuenta de origen.
+            Cuenta cuentaDestino = buscarCuenta(destino); // Busca la cuenta de destino.
 
-            if (cuentaOrigen != null && cuentaDestino != null) {
-                if (cuentaOrigen.retirar(monto)) {
-                    cuentaDestino.depositar(monto);
-                    System.out.println("Transferencia exitosa de " + monto + " desde " + origen + " a " + destino);
+            if (cuentaOrigen != null && cuentaDestino != null) { // Verifica si ambas cuentas existen.
+                if (cuentaOrigen.retirar(monto)) { // Intenta retirar el monto de la cuenta de origen.
+                    cuentaDestino.depositar(monto); // Deposita el monto en la cuenta de destino.
+                    System.out.println("Transferencia exitosa de " + monto + " desde " + origen + " a " + destino); // Imprime un mensaje de éxito.
                 } else {
-                    System.out.println("No se pudo realizar la transferencia. Fondos insuficientes en la cuenta origen.");
+                    System.out.println("No se pudo realizar la transferencia. Fondos insuficientes en la cuenta origen."); // Imprime un mensaje de error por fondos insuficientes.
                 }
             } else {
-                System.out.println("No se pudo realizar la transferencia. Cuenta origen o destino no encontrada.");
+                System.out.println("No se pudo realizar la transferencia. Cuenta origen o destino no encontrada."); // Imprime un mensaje de error por cuentas no encontradas.
             }
         }
-    }
-
-    // Método principal donde pedimos los datos por consola y ejecutamos las operaciones
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Ejemplo de uso del TDA Lista
-        Lista lista = new Lista();
-        lista.agregarElemento(10);
-        lista.agregarElemento(20);
-        lista.mostrarElementos();
-        lista.eliminarElemento(10);
-        lista.mostrarElementos();
-
-        // Ejemplo de uso del TDA Pila
-        Pila pila = new Pila();
-        pila.apilar(5);
-        pila.apilar(10);
-        pila.mostrarPila();
-        System.out.println("Elemento desapilado: " + pila.desapilar());
-        pila.mostrarPila();
-
-        // Ejemplo de uso del TDA Cola
-        Cola cola = new Cola();
-        cola.encolar(30);
-        cola.encolar(40);
-        cola.mostrarCola();
-        System.out.println("Elemento desencolado: " + cola.desencolar());
-        cola.mostrarCola();
-
-        // Creamos una instancia del banco
-        Banco banco = new Banco("Mi Banco");
-
-        // Pedimos datos para crear cuentas
-        System.out.print("Ingrese el número de la cuenta 1: ");
-        String numeroCuenta1 = scanner.nextLine();
-        System.out.print("Ingrese el saldo inicial de la cuenta 1: ");
-        double saldoCuenta1 = scanner.nextDouble();
-        scanner.nextLine();  // Limpiar el buffer de entrada
-
-        System.out.print("Ingrese el número de la cuenta 2: ");
-        String numeroCuenta2 = scanner.nextLine();
-        System.out.print("Ingrese el saldo inicial de la cuenta 2: ");
-        double saldoCuenta2 = scanner.nextDouble();
-        scanner.nextLine();  // Limpiar el buffer de entrada
-
-        // Crear cuentas con los datos ingresados
-        Cuenta cuenta1 = new Cuenta(numeroCuenta1, saldoCuenta1);
-        Cuenta cuenta2 = new Cuenta(numeroCuenta2, saldoCuenta2);
-
-        // Agregar las cuentas al banco
-        banco.agregarCuenta(cuenta1);
-        banco.agregarCuenta(cuenta2);
-
-        // Mostrar el estado de las cuentas
-        System.out.println("Cuentas creadas con éxito.");
-        System.out.println("Cuenta 1: " + cuenta1.getNumero() + " con saldo " + cuenta1.getSaldo());
-        System.out.println("Cuenta 2: " + cuenta2.getNumero() + " con saldo " + cuenta2.getSaldo());
-
-        // Realizar una transferencia
-        System.out.print("Ingrese el monto a transferir de la cuenta 1 a la cuenta 2: ");
-        double montoTransferir = scanner.nextDouble();
-        scanner.nextLine();  // Limpiar el buffer de entrada
-
-        banco.transferir(numeroCuenta1, numeroCuenta2, montoTransferir);
-
-        // Mostrar el estado final de las cuentas
-        System.out.println("Saldo final de la Cuenta 1: " + cuenta1.getSaldo());
-        System.out.println("Saldo final de la Cuenta 2: " + cuenta2.getSaldo());
-
-        scanner.close();
     }
 }
