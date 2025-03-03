@@ -1,4 +1,6 @@
 package org.example;
+import java.util.Scanner;
+
 import org.example.TiposDatos;
 import org.example.Operadores;
 import org.example.ControlFlujo;
@@ -8,10 +10,14 @@ import org.example.Clases_Obj;
 import org.example.Poliformismo;
 import org.example.ContructoresEncapsulamiento;
 import org.example.ClaseAbstracta;
+import org.example.MemoriaDinamica;
+import org.example.MemoriaEstatica;
+import org.example.TiposDatosAbstractos;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         /*// importando la clase TiposDatos
         // Crear una instancia de TiposDatos
@@ -95,13 +101,97 @@ public class Main {
         person2.setAge(30);
         person2.printValues(); // Imprime los valores modificados*/
 
-        // importando la clase ClaseAbstracta
+        /*// importando la clase ClaseAbstracta
         ClaseAbstracta ClaseAbstracta = new ClaseAbstracta();
         ClaseAbstracta.Dog dog = ClaseAbstracta.new Dog();
         dog.makeSound();
         dog.sleep();
         ClaseAbstracta.Cat cat = ClaseAbstracta.new Cat();
         cat.makeSound();
-        cat.sleep();
+        cat.sleep();*/
+
+        /*// importando la clase MemoriaDinamica
+        // Crear una instancia de la clase MemoriaDinamica y llamar al método ejecutar
+        MemoriaDinamica memoriaDinamica = new MemoriaDinamica();
+        memoriaDinamica.ejecutar();*/
+
+        /*// importando la clase MemoriaEstatica
+        // Crear una instancia de la clase MemoriaEstatica
+        MemoriaEstatica memoriaEstatica = new MemoriaEstatica();
+        // Aquí se está creando una nueva instancia de la clase MemoriaEstatica.
+        // La memoria para este objeto se asigna dinámicamente en el montón.
+        System.out.println("Se ha creado una instancia de MemoriaEstatica.");
+
+        // Llamar al método ejecutar
+        memoriaEstatica.ejecutar();*/
+
+        // importando la clase TiposDatosAbstractos
+        // Crear una instancia de la clase TiposDatosAbstractos
+        // Ejemplo de uso del TDA Lista
+        TiposDatosAbstractos.Lista lista = new TiposDatosAbstractos.Lista();
+        lista.agregarElemento(10);
+        lista.agregarElemento(20);
+        lista.mostrarElementos();
+        lista.eliminarElemento(10);
+        lista.mostrarElementos();
+
+        // Ejemplo de uso del TDA Pila
+        TiposDatosAbstractos.Pila pila = new TiposDatosAbstractos.Pila();
+        pila.apilar(5);
+        pila.apilar(10);
+        pila.mostrarPila();
+        System.out.println("Elemento desapilado: " + pila.desapilar());
+        pila.mostrarPila();
+
+        // Ejemplo de uso del TDA Cola
+        TiposDatosAbstractos.Cola cola = new TiposDatosAbstractos.Cola();
+        cola.encolar(30);
+        cola.encolar(40);
+        cola.mostrarCola();
+        System.out.println("Elemento desencolado: " + cola.desencolar());
+        cola.mostrarCola();
+
+        // Creamos una instancia del banco
+        TiposDatosAbstractos.Banco banco = new TiposDatosAbstractos.Banco("Mi Banco");
+
+        // Pedimos datos para crear cuentas
+        System.out.print("Ingrese el número de la cuenta 1: ");
+        String numeroCuenta1 = scanner.nextLine();
+        System.out.print("Ingrese el saldo inicial de la cuenta 1: ");
+        double saldoCuenta1 = scanner.nextDouble();
+        scanner.nextLine();  // Limpiar el buffer de entrada
+
+        System.out.print("Ingrese el número de la cuenta 2: ");
+        String numeroCuenta2 = scanner.nextLine();
+        System.out.print("Ingrese el saldo inicial de la cuenta 2: ");
+        double saldoCuenta2 = scanner.nextDouble();
+        scanner.nextLine();  // Limpiar el buffer de entrada
+
+        // Crear cuentas con los datos ingresados
+        TiposDatosAbstractos.Cuenta cuenta1 = new TiposDatosAbstractos.Cuenta(numeroCuenta1, saldoCuenta1);
+        TiposDatosAbstractos.Cuenta cuenta2 = new TiposDatosAbstractos.Cuenta(numeroCuenta2, saldoCuenta2);
+
+        // Agregar las cuentas al banco
+        banco.agregarCuenta(cuenta1);
+        banco.agregarCuenta(cuenta2);
+
+        // Mostrar el estado de las cuentas
+        System.out.println("Cuentas creadas con éxito.");
+        System.out.println("Cuenta 1: " + cuenta1.getNumero() + " con saldo " + cuenta1.getSaldo());
+        System.out.println("Cuenta 2: " + cuenta2.getNumero() + " con saldo " + cuenta2.getSaldo());
+
+        // Realizar una transferencia
+        System.out.print("Ingrese el monto a transferir de la cuenta 1 a la cuenta 2: ");
+        double montoTransferir = scanner.nextDouble();
+        scanner.nextLine();  // Limpiar el buffer de entrada
+
+        banco.transferir(numeroCuenta1, numeroCuenta2, montoTransferir);
+
+        // Mostrar el estado final de las cuentas
+        System.out.println("Saldo final de la Cuenta 1: " + cuenta1.getSaldo());
+        System.out.println("Saldo final de la Cuenta 2: " + cuenta2.getSaldo());
+
+        scanner.close();
+
     }
 }
